@@ -11,7 +11,9 @@ function getComputerChoice(randomNumber){
     }else if(randomNumber === 3){
         computerChoice = "scissors";
     }
-    return console.log(computerChoice);
+    computerChoice.toLowerCase;
+    console.log(computerChoice);
+    return computerChoice;
 }
 
 function generateNumber(){
@@ -21,11 +23,38 @@ function generateNumber(){
 function getHumanChoice(){
     message = "Rock, paper or scissors?";
     let humanChoice = prompt(message);
+    humanChoice.toLowerCase;
     console.log(humanChoice);
-    return humanChoice.toLowerCase;
+    return humanChoice;
 }
 
 humanScore = 0;
 computerScore = 0;
 
-getHumanChoice();
+
+function playRound(computerChoice, humanChoice){
+    
+    if(humanChoice === "rock" && computerChoice === "scissors"){
+        console.log("You win! Rock beats scissors");
+        humanScore++;
+    }else if(humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You win! Scissors beats paper");
+        humanScore++;
+    }else if(humanChoice === "paper" && computerChoice === "rock"){
+        console.log("You win! Paper beats rock");
+        humanScore++;
+    }else if(humanChoice === "scissors" && computerChoice === "rock"){
+        console.log("You lose :( Rock beats scissors");
+        computerScore++;
+    }else if(humanChoice === "paper" && computerChoice === "scissors"){
+        console.log("You lose :( Scissors beats paper")
+        computerScore++;
+    }else if(humanChoice === "rock" && computerChoice === "paper"){
+        console.log("You lose :( Paper beats rock");
+        computerScore++
+    }else{
+        console.log("Something was wrong");
+    }
+    console.log("Your score: " + humanScore);
+    console.log("CPU score: " + computerScore);
+}
