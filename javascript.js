@@ -28,10 +28,6 @@ function getHumanChoice(){
     return humanChoice;
 }
 
-humanScore = 0;
-computerScore = 0;
-
-
 function playRound(computerChoice, humanChoice){
     
     if(humanChoice === "rock" && computerChoice === "scissors"){
@@ -52,9 +48,48 @@ function playRound(computerChoice, humanChoice){
     }else if(humanChoice === "rock" && computerChoice === "paper"){
         console.log("You lose :( Paper beats rock");
         computerScore++
+    }else if(humanChoice === computerChoice){
+        console.log("You're even!");
     }else{
         console.log("Something was wrong");
     }
     console.log("Your score: " + humanScore);
     console.log("CPU score: " + computerScore);
 }
+
+
+
+function playGame(){
+
+    humanScore = 0;
+    computerScore = 0;
+
+    let humanInput = getHumanChoice();
+    let computerOutput = getComputerChoice();
+    playRound(computerOutput, humanInput);
+
+    humanInput = getHumanChoice();
+    computerOutput = getComputerChoice();
+    playRound(computerOutput, humanInput);
+
+    humanInput = getHumanChoice();
+    computerOutput = getComputerChoice();
+    playRound(computerOutput, humanInput);
+
+    humanInput = getHumanChoice();
+    computerOutput = getComputerChoice();
+    playRound(computerOutput, humanInput);
+
+    humanInput = getHumanChoice();
+    computerOutput = getComputerChoice();
+    playRound(computerOutput, humanInput);
+
+    if(humanScore > computerScore){
+        console.log("You won the game!");
+    }else if(humanScore < computerScore){
+        console.log("You lost the game :C");
+    }
+}
+
+
+playGame();
