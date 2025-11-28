@@ -114,7 +114,3 @@ buttons.forEach((button) => {
         
     });
 })
-
-//rock.addEventListener("click", playGame(rock.id));
-//paper.addEventListener("click", playGame(paper.id));
-//scissors.addEventListener("click", playGame(scissors.id));
